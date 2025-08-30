@@ -1,0 +1,32 @@
+<section class="container mx-auto">
+  <h2 class="text-3xl font-bold mb-2">Sitios de interés</h2>
+  <h3 class="text-xl text-gray-500 mb-2">
+    {{sitios().length}} Sitios de interés
+  </h3>
+</section>
+
+<section class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-2">
+  @for (sitio of sitios(); track sitio.id; let i = $index) {
+    <!-- Card -->
+    <div class="card bg-base-100 shadow-sm rounded-t-md overflow-hidden">
+
+      <mini-map [lngLat]="sitio.lngLat" [zoom]="15"/>
+
+      <div class="card-body">
+        <h2 class="card-title">
+          {{sitio.name}}
+          @if(i=== 1) {
+            <div class="badge badge-secondary">Nuevo</div>
+          }
+        </h2>
+        <p>{{sitio.description}}</p>
+        <div class="card-actions justify-end">
+          @for (tag of sitio.tags; track $index) {
+            <div class="badge badge-outline badge-secondary">{{tag}}</div>
+          }
+        </div>
+      </div>
+    </div>
+    <!-- Card -->
+  }
+</section>

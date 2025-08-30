@@ -1,59 +1,45 @@
-# MapsApp
+<div style="display: flex; justify-content: space-between; align-items:center;">
+  <p align="center">
+    <a href="https://www.angular.io/" target="blank">
+      <img src="https://angular.io/assets/images/logos/angular/angular.svg" width="200" alt="Angular Logo"/>
+    </a>
+  </p>
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.1.
+  <p align="center">
+    <a href="https://www.typescriptlang.org/" target="blank">
+      <img src="public/typescript.svg" width="200" alt="TypeScript Logo"/>
+    </a>
+  </p>
+</div>
 
-## Development server
+# MapsApp-TS
 
-To start a local development server, run:
+Aplicación creada en Angular usando [TypeScript](https://www.typescriptlang.org), [TailwindCSS](https://tailwindcss.com/) y [DaisyUI](https://daisyui.com/), para la visualización de mapas interactivos.
 
-```bash
-ng serve
-```
+Se usaron 2 APIS [Mapbox](https://www.mapbox.com/) y [MapLibre](https://maplibre.org/), esto debido a que Mapbox (al momento de realizar éste ejercicio) pide ingresar una tarjeta de crédito por cuestiones regulatorias (en mi caso tengo años con la cuenta y me dejó trabajar sin ingresarla).
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Ambas API's son prácticamente idénticas, por lo que el funcionamiento es el mismo, solo que la de Mapbox requiere una API_KEY y la de MapLibre no.
 
-## Code scaffolding
+Cuenta con un menú desplegable que muestra las diferentes opciones de mapas (una para cada API). En la opción de Mapa a pantalla completa se puede navegar, hacer zoom con el scroll del mouse o con los controles en pantalla. En la opción de Sitios de interés se muestra un listado de ubicaciones, cada uno con su respectivo mini mapa, simulando puntos de interés, y por último en la opción de Marcadores se puede navegar por el mapa, añadir marcadores, desplazarte entre ellos y eliminarlos dándole doble click.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Algunos conceptos utilizados para la generación de ésta App, son:
 
-```bash
-ng generate component component-name
-```
+|  Conscepto  | Concepto  |
+|  -------------  |  -------------  |
+|  1. Mapas: A pantalla completa.  |  5. Scripts de Node.  |
+|  2. Mapas: Como componente individual.  |  6. [Mapbox](https://www.mapbox.com/).  |
+|  3. Mapas: Marcadores y señales.  |  7. [MapLibre](https://maplibre.org/).  |
+|  4. Variables de entorno .env.  |  8. Y más.  |
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-```bash
-ng generate --help
-```
+Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-cli) versión 20.1.1.
 
-## Building
+## Servidor de Desarrollo
 
-To build the project run:
+Ejecuta `ng serve` para generar un servidor de desarrollo. Navega a `http://localhost:4200/`. La aplicación se recargará automáticamente si cambia alguno de los archivos de origen.
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Levantar proyecto en Dev (solo para trabajar con Mapbox):
+1. Clonar repositorio.
+2. Instalar dependencias.
+3. Generar el `.env` basado en el `.env.template`.
+4. Ejecutar el comando `npm run set-envs`.
